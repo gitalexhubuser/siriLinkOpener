@@ -1,15 +1,10 @@
 import os
-from gtts import gTTS #pip install gtts
-from playsound import playsound #pip install playsound==1.2.2
-import speech_recognition as sr #pip install SpeechRecognition #pip install pyaudio
+from gtts import gTTS
+from playsound import playsound # pip install playsound==1.2.2
+import speech_recognition as sr # pip install SpeechRecognition # pip install pyaudio
 import webbrowser #pip install webbrowser
 import random
-from lib_1 import fix_directory
 
-# Gotham 1.2
-
-# Фикс пути (нужно для звуковых ответов)
-fix_directory()
 
 
 # 1 Переменные 
