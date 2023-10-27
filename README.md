@@ -29,9 +29,10 @@
 > Нужны модели!
 
 > vosk-model-small-ru-0.22
-> vosk-model-ru-0.10
-> vosk-model-ru-0.22
 
+> vosk-model-ru-0.10
+
+> vosk-model-ru-0.22
 
 ---
 
