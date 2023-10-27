@@ -7,10 +7,12 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "venv": true,
-        ".vscode": true
+        ".vscode": true,
+        "models": true
     },
     "hide-files.files": [
         "venv",
-        ".vscode"
+        ".vscode",
+        "models"
     ]
 }
