@@ -1,40 +1,34 @@
-import os
-import speech_recognition as sr # pip install SpeechRecognition # pip install pyaudio
+import pyaudio
+from vosk import Model, KaldiRecognizer # pip3 install vosk
+# import os
+# import json
+import keyboard
 import webbrowser
-import whisper
+from playsound import playsound # pip install playsound==1.2.2
 
-# 1 Переменные 
-greetings_question = ["привет", "хай", "салют", "ку", "здорова", "хелоу", "добрый день"]
-greetings_answer = ["добрый день", "приветствую"]
+# либы от сюда https://alphacephei.com/vosk/models
 
-model = whisper.load_model("base")
+model = Model(r"E:\PythonProjects\windowsVoiceHelper\vosk-model-small-ru-0.22")
+# model = Model(r"O:\PythonProjects\Amanda-Lizard\vosk-model-ru-0.10")
 
-def JarvisRecord():
-    # r = sr.Recognizer()
-    # with sr.Microphone() as source:
-        # print("Говори в микрофон:")
-        # audio = r.listen(source)
+recognizer = KaldiRecognizer(model, 16000)
 
-        # if os.path.exists("answer.mp3"):
-        #     os.remove("answer.mp3")
+# работает !
+mic = pyaudio.PyAudio()
+stream = mic.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True,  frames_per_buffer=8192)
 
-        # r.save("answer.mp3")
-
-    result = model.transcribe("E:/PythonProjects\\windowsVoiceHelper\\answer.mp3", fp16=False)
-    # print("audio", audio)
-    print(result["text"])
-
-
-
-# 3 Цикл
 while True:
-    m = input("").lower()
-    if m == ".":
-        print("Jarvis: Внимательно слушаю вашу команду!")
-        JarvisRecord()
-    # elif m == "привет":
-    elif m in greetings_answer:
-        print("Привет\n")
- 
-    else:
-        print("User: " + m)
+    try:
+        data = stream.read(4096)
+        if recognizer.AcceptWaveform(data):
+            text = recognizer.Result()
+
+            if keyboard.is_pressed('ctrl'):
+                result = text[14:-3]
+                print("result:", result)
+
+                if result == "тест":
+                    playsound("succes.mp3")
+                    webbrowser.open_new("https://docs.google.com/spreadsheets/u/0")
+    except:
+        pass

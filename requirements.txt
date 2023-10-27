@@ -1,1 +1,4 @@
-# pip install gtts
+
+# pip3 install vosk
+# pip install keyboard
+# pip install playsound
