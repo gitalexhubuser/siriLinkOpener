@@ -23,12 +23,14 @@ while True:
         with sr.Microphone() as source:
             print("Говори в микрофон:")
             audio = r.listen(source)
-        try:
-            # print("Text: " + r.recognize_google(audio, None, "ru-RU"))
-            # voice_result = r.recognize_google(audio, None, "ru-RU")
-            voice_result = r.recognize_google(audio, show_all=True, language="ru-RU")
-            ts = voice_result['alternative'][0]['transcript'].lower() # transcript_value
-            print("Gotham: распознал следующие слова:", ts)
-            process_result(ts)
-        except:
-            pass
+            try:
+                voice_result = r.recognize_google(audio, show_all=True, language="ru-RU")
+                if voice_result:
+                    ts = voice_result['alternative'][0]['transcript'].lower() # transcript_value
+                    print("Gotham: распознал следующие слова:", ts)
+                    process_result(ts)
+            except sr.UnknownValueError:
+                print("Gotham: Не удалось распознать речь")
+            except sr.RequestError:
+                print("Gotham: Ошибка при обращении к сервису распознавания речи")
+                
