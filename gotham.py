@@ -8,9 +8,14 @@ import webbrowser
 soundFile = r"E:\PythonProjects\windowsVoiceHelper\Assets\succes.mp3"
 
 def process_result(result):
-    if result in ["тест", "тест тест", "тэст", "test"]:
+    # if result in ["тест", "тест тест", "тэст", "test"]:
+    if result in ["ютуб", "youtube"]:
         playsound(soundFile)
         webbrowser.open_new("https://www.youtube.com/@LuaNaZakaz")
+
+    elif result in ["алекс", "саша", "alex"]:
+        playsound(soundFile)
+        webbrowser.open_new("https://www.youtube.com/channel/UCjDdSdLJbbV0UBtzKpClmig")
 
     elif result in ["дота", "пота", "dota"]:
         playsound(soundFile)
@@ -44,12 +49,14 @@ def process_result(result):
         webbrowser.open("https://vk.com/im?sel=139021021")
 
     # Калькулятор
-    # Ютуб youtube 
-    # Алекс саша
     # Бабки деньги долары
     # Ники ник nick никнейм nickname
     # Премьер. Адоб. Адоб премьер. Адоб премьер про. Adobe premiere pro
     # Фотошоп. Photoshop
+
+    elif result in ["заказ", "заказы", "закасы", "закас", "order"]:
+        playsound(soundFile)
+        webbrowser.open("obsidian://open?vault=IT&file=Lua")
 
 
 # Основной цикл
