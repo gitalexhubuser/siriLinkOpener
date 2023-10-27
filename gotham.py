@@ -25,6 +25,10 @@ def process_result(result):
     elif result in ["часто забываю"]:
         playsound("succes.mp3")
         webbrowser.open("obsidian://open?vault=Lua&file=%D0%A7%D0%B0%D1%81%D1%82%D0%BE%20%D0%B7%D0%B0%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%20-%20Wow%20Api")
+    
+    elif result in ["git", "гит"]:
+        playsound("succes.mp3")
+        webbrowser.open("obsidian://open?vault=IT&file=git%2Fgithub%20-%20SSH")
 
 # Основной цикл
 if __name__ == "__main__":
