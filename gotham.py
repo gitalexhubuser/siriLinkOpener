@@ -1,45 +1,56 @@
 from playsound import playsound # pip install playsound==1.2.2
-import speech_recognition as sr # pip install SpeechRecognition # pip install pyaudio
-import webbrowser
-import keyboard # pip install keyboard
-import subprocess
 import ctypes
+import keyboard # pip install keyboard
+import speech_recognition as sr # pip install SpeechRecognition # pip install pyaudio
+import subprocess
+import webbrowser
+
+soundFile = r"E:\PythonProjects\windowsVoiceHelper\Assets\succes.mp3"
 
 def process_result(result):
-    if result in ["тест", "тэст", "test"]:
-        playsound("succes.mp3")
+    if result in ["тест", "тест тест", "тэст", "test"]:
+        playsound(soundFile)
         webbrowser.open_new("https://www.youtube.com/@LuaNaZakaz")
 
     elif result in ["дота", "пота", "dota"]:
-        playsound("succes.mp3")
+        playsound(soundFile)
         subprocess.Popen(r"D:\Steam\steamapps\common\dota 2 beta\game\bin\win64\dota2.exe")
 
     elif result in ["проект", "проекте", "проэкт"]:
-        playsound("succes.mp3")
+        playsound(soundFile)
 
     elif result in ["автозагрузка"]:
-        playsound("succes.mp3")
+        playsound(soundFile)
         # path = r"C:\Users\VisualCode\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
         # subprocess.Popen(f'explorer "{path}"')
         subprocess.Popen('start shell:startup', shell=True)
 
     elif result in ["часто забываю"]:
-        playsound("succes.mp3")
+        playsound(soundFile)
         webbrowser.open("obsidian://open?vault=Lua&file=%D0%A7%D0%B0%D1%81%D1%82%D0%BE%20%D0%B7%D0%B0%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%20-%20Wow%20Api")
     
     elif result in ["git", "гит", "repo", "репо", "репа"]:
-        playsound("succes.mp3")
+        playsound(soundFile)
         webbrowser.open("obsidian://open?vault=IT&file=git%2Fgithub%20-%20SSH")
 
     elif result in ["wow", "вов", "byster", "бустер", "пустер", "варкрафт", "warcraft"]:
-        playsound("succes.mp3")
+        playsound(soundFile)
         shortcut_path = r"C:\Users\VisualCode\OneDrive\Desktop\[byster] ad2.lnk"
         shell = ctypes.windll.shell32
         shell.ShellExecuteW(None, "open", shortcut_path, None, None, 1)
 
     elif result in ["богатов", "леша", "лёша", "енот", "енотик"]:
-        playsound("succes.mp3")
+        playsound(soundFile)
         webbrowser.open("https://vk.com/im?sel=139021021")
+
+    # Калькулятор
+    # Ютуб youtube 
+    # Алекс саша
+    # Бабки деньги долары
+    # Ники ник nick никнейм nickname
+    # Премьер. Адоб. Адоб премьер. Адоб премьер про. Adobe premiere pro
+    # Фотошоп. Photoshop
+
 
 # Основной цикл
 if __name__ == "__main__":
