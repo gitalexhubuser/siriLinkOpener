@@ -27,7 +27,7 @@ def process_result(result):
         playsound("succes.mp3")
         webbrowser.open("obsidian://open?vault=Lua&file=%D0%A7%D0%B0%D1%81%D1%82%D0%BE%20%D0%B7%D0%B0%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%20-%20Wow%20Api")
     
-    elif result in ["git", "гит"]:
+    elif result in ["git", "гит", "repo", "репо", "репа"]:
         playsound("succes.mp3")
         webbrowser.open("obsidian://open?vault=IT&file=git%2Fgithub%20-%20SSH")
 
@@ -36,6 +36,10 @@ def process_result(result):
         shortcut_path = r"C:\Users\VisualCode\OneDrive\Desktop\[byster] ad2.lnk"
         shell = ctypes.windll.shell32
         shell.ShellExecuteW(None, "open", shortcut_path, None, None, 1)
+
+    elif result in ["богатов", "леша", "лёша", "енот", "енотик"]:
+        playsound("succes.mp3")
+        webbrowser.open("https://vk.com/im?sel=139021021")
 
 # Основной цикл
 if __name__ == "__main__":
