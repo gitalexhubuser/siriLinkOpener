@@ -1,5 +1,7 @@
 # windowsVoiceHelper
 
+![Alt text](image.png)
+
 ## Описание
 
 gotham.py - онлайн распознавание речи через Google api
@@ -17,4 +19,4 @@ run.bat — ярлык для запуска
 # Ссылки
 | Описание | Ссылка |
 | ------ | ------ |
-Репо: | []()
+Репо: | [github.com/gitalexhubuser/siriLinkOpener](https://github.com/gitalexhubuser/siriLinkOpener)
