@@ -30,6 +30,11 @@ def process_result(result):
         playsound("succes.mp3")
         webbrowser.open("obsidian://open?vault=IT&file=git%2Fgithub%20-%20SSH")
 
+    elif result in ["wow", "вов", "byster", "бустер", "пустер", "варкрафт", "warcraft"]:
+        playsound("succes.mp3")
+        path = r'D:\01 - Wow для проверки педалек [Logon 1]\Wow.exe" -login "ad2" -password "ad2" -realmlist "wow.byster.ru" -realmname "Byster Test Server'
+        subprocess.Popen(f'explorer "{path}"')
+
 # Основной цикл
 if __name__ == "__main__":
     r = sr.Recognizer()
