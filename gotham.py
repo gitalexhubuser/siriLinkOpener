@@ -3,6 +3,7 @@ import speech_recognition as sr # pip install SpeechRecognition # pip install py
 import webbrowser
 import keyboard # pip install keyboard
 import subprocess
+import ctypes
 
 def process_result(result):
     if result in ["тест", "тэст", "test"]:
@@ -32,8 +33,9 @@ def process_result(result):
 
     elif result in ["wow", "вов", "byster", "бустер", "пустер", "варкрафт", "warcraft"]:
         playsound("succes.mp3")
-        path = r'D:\01 - Wow для проверки педалек [Logon 1]\Wow.exe" -login "ad2" -password "ad2" -realmlist "wow.byster.ru" -realmname "Byster Test Server'
-        subprocess.Popen(f'explorer "{path}"')
+        shortcut_path = r"C:\Users\VisualCode\OneDrive\Desktop\[byster] ad2.lnk"
+        shell = ctypes.windll.shell32
+        shell.ShellExecuteW(None, "open", shortcut_path, None, None, 1)
 
 # Основной цикл
 if __name__ == "__main__":
