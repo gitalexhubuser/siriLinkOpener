@@ -10,17 +10,17 @@
 
 ## Использование
 
-### Gotham
+### Gotham - онлайн
 
-`gotham.py` - онлайн распознавание речи через Google api
+`gotham.py` - распознавание речи через Google api
 
 `runGotham.bat` — ярлык для запуска
 
 Зажимаем ctrl и говорим
 
-### Vosk
+### Vosk - офлайн
 
-`main.py` - офлайн распознавание речи через Vosk (Kaldi)
+`main.py` - распознавание речи при помощи Vosk (Kaldi)
 
 `run.bat` — ярлык для запуска
 
