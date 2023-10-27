@@ -11,14 +11,20 @@ def process_result(result):
 
     elif result in ["дота", "пота", "dota"]:
         playsound("succes.mp3")
-
         subprocess.Popen(r"D:\Steam\steamapps\common\dota 2 beta\game\bin\win64\dota2.exe")
+
     elif result in ["проект", "проекте", "проэкт"]:
         playsound("succes.mp3")
 
+    elif result in ["автозагрузка"]:
+        playsound("succes.mp3")
+        # path = r"C:\Users\VisualCode\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+        # subprocess.Popen(f'explorer "{path}"')
+        subprocess.Popen('start shell:startup', shell=True)
+
     elif result in ["часто забываю"]:
         playsound("succes.mp3")
-        subprocess.Popen("obsidian://open?vault=Lua&file=%D0%A7%D0%B0%D1%81%D1%82%D0%BE%20%D0%B7%D0%B0%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%20-%20Wow%20Api")
+        webbrowser.open("obsidian://open?vault=Lua&file=%D0%A7%D0%B0%D1%81%D1%82%D0%BE%20%D0%B7%D0%B0%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%20-%20Wow%20Api")
 
 # Основной цикл
 if __name__ == "__main__":
