@@ -1,4 +1,1 @@
-
-# pip3 install vosk
-# pip install keyboard
 # pip install playsound==1.2.2
